@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>划水</title>
-    <link>/</link>
+    <link>https://winglq.github.io/</link>
     <description>Recent content on 划水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
     <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://winglq.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hashicorp MemDB 代码分析</title>
-      <link>/posts/memdb/</link>
+      <link>https://winglq.github.io/posts/memdb/</link>
       <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/memdb/</guid>
+      <guid>https://winglq.github.io/posts/memdb/</guid>
       <description>MemDB介绍 MemDB是一个纯内存数据库。Consul使用MemDB存储元数据，因为Raft的数据可以通过Log和Snapshot恢复，所</description>
     </item>
     
     <item>
       <title>hashicorp raft 代码分析3 - Snapshot</title>
-      <link>/posts/raft3/</link>
+      <link>https://winglq.github.io/posts/raft3/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/raft3/</guid>
+      <guid>https://winglq.github.io/posts/raft3/</guid>
       <description>简介 上一篇文章介绍了Raft的主要工作流程。 这篇文章主要介绍raft的snapshot机制。Raft中引入Snapshot的目的是为了避免存</description>
     </item>
     
     <item>
       <title>hashicorp raft 代码分析2 - Workflow</title>
-      <link>/posts/raft2/</link>
+      <link>https://winglq.github.io/posts/raft2/</link>
       <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/raft2/</guid>
+      <guid>https://winglq.github.io/posts/raft2/</guid>
       <description>简介 上一篇文章介绍了Raft的基本概念以及选主过程，这篇文章分析raft的主要工作流程。 Raft工作流程 首先定义下客户端（Client)，客</description>
     </item>
     
     <item>
       <title>hashicorp raft 代码分析1 - 选举leader</title>
-      <link>/posts/raft1/</link>
+      <link>https://winglq.github.io/posts/raft1/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/raft1/</guid>
+      <guid>https://winglq.github.io/posts/raft1/</guid>
       <description>Raft介绍 Raft是一种一致性算法，一致性算法的作用是将几个机器看成一个整体，即使其中的某台或者某几台机器发生故障，整个系统仍能正常工作。</description>
     </item>
     
     <item>
       <title>Oauth2 Authorization Code Grant模式分析</title>
-      <link>/posts/oauth2/</link>
+      <link>https://winglq.github.io/posts/oauth2/</link>
       <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/oauth2/</guid>
+      <guid>https://winglq.github.io/posts/oauth2/</guid>
       <description>OAuth2简介 OAuth2是一个将有限的HTTP服务访问权限提供给第三方应用的框架。OAuth2用于替换OAuth，OAuth2与OAut</description>
     </item>
     
     <item>
       <title>在golang for循环中使用goroutine引起的问题及分析</title>
-      <link>/posts/gofor/</link>
+      <link>https://winglq.github.io/posts/gofor/</link>
       <pubDate>Mon, 24 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/gofor/</guid>
+      <guid>https://winglq.github.io/posts/gofor/</guid>
       <description>无意中搜到Handling 1 Million Requests per Minute with Go这篇博客，在评论区里有人发现文章中的代码有一个隐蔽的bug。在平时coding中这个问题比较容易被</description>
     </item>
     
     <item>
       <title>CentOS 7下安装Tensorflow</title>
-      <link>/posts/tfinstall/</link>
+      <link>https://winglq.github.io/posts/tfinstall/</link>
       <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/tfinstall/</guid>
+      <guid>https://winglq.github.io/posts/tfinstall/</guid>
       <description>安装和配置 安装virtualenv，用于创建virtual的python运行时。 pip install virtualenv 创建virtual环境，下面的命令会创建一个新的目录t</description>
     </item>
     
