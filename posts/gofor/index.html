@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Qing" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.74.3" />
+
+<link rel="canonical" href="/posts/gofor/">
+<meta property="og:title" content="在golang for循环中使用goroutine引起的问题及分析" />
+<meta property="og:description" content="无意中搜到Handling 1 Million Requests per Minute with Go这篇博客，在评论区里有人发现文章中的代码有一个隐蔽的bug。在平时coding中这个问题比较容易被" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/gofor/" />
+<meta property="article:published_time" content="2018-12-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-12-24T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在golang for循环中使用goroutine引起的问题及分析"/>
+<meta name="twitter:description" content="无意中搜到Handling 1 Million Requests per Minute with Go这篇博客，在评论区里有人发现文章中的代码有一个隐蔽的bug。在平时coding中这个问题比较容易被"/>
+
+
+<meta itemprop="name" content="在golang for循环中使用goroutine引起的问题及分析">
+<meta itemprop="description" content="无意中搜到Handling 1 Million Requests per Minute with Go这篇博客，在评论区里有人发现文章中的代码有一个隐蔽的bug。在平时coding中这个问题比较容易被">
+<meta itemprop="datePublished" content="2018-12-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-12-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="625">
+
+
+
+<meta itemprop="keywords" content="golang," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-130886361-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<title>
+
+
+     在golang for循环中使用goroutine引起的问题及分析 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="">划水</a>
+    </div> 
+
+    
+    
+    <a class="nav-item active" href="/posts/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:winglq@gmail.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/winglq" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 在golang for循环中使用goroutine引起的问题及分析 </h1>
+    <div class="content"> <p>无意中搜到<a href="http://marcio.io/2015/07/handling-1-million-requests-per-minute-with-golang/">Handling 1 Million Requests per Minute with Go</a>这篇博客，在评论区里有人发现文章中的代码有一个隐蔽的bug。在平时coding中这个问题比较容易被忽略，所以在此记录和分析下。
+有问题的模拟代码如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (  
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+    <span style="color:#e6db74">&#34;time&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Payload</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">data</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Payload</span>) <span style="color:#a6e22e">UploadToS3</span>() <span style="color:#66d9ef">error</span> {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;payload data:&#34;</span>,<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">data</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {  
+    <span style="color:#a6e22e">payloads</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">Payload</span>{<span style="color:#a6e22e">Payload</span>{<span style="color:#ae81ff">1</span>},<span style="color:#a6e22e">Payload</span>{<span style="color:#ae81ff">2</span>},<span style="color:#a6e22e">Payload</span>{<span style="color:#ae81ff">3</span>},<span style="color:#a6e22e">Payload</span>{<span style="color:#ae81ff">4</span>}}
+
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>,<span style="color:#a6e22e">payload</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">payloads</span> {
+        <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">payload</span>.<span style="color:#a6e22e">UploadToS3</span>()
+    }
+
+    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+    }
+</code></pre></div><p>运行上面的代码，输出都为<code>payload data: 4</code>，而不是4个不同的值。这是由于for只在第一个Iteration声明payload，后续的迭代只是改变playload的值。因为for循环所在的goroutine在4个UploadToS3 goroutine之前运行，所以当UploadToS3开始被调用的时候playload的值已经确定，即slice的最后一个Payload。因为UploadToS3的receiver是<code>*Payload</code>，所以golang编译器会在遇到<code>payload.UploadToS3()</code>的时候自动使用<code>&amp;payload</code>去调用UploadToS3。因此4个goroutine取到的结果是同一个。如果UploadToS3()的receiver是Payload就不会有这个问题，因为编译器会复制一个临时的non-point receiver(Payload)传递给method(UploadToS3)。
+当然由于goroutine运行顺序的不确定性，也有可能出现不是输出都为<code>payload data: 4</code>的结果。</p>
+<p>这个问题涉及的知识点比较多，忽略任何一点都可能忽略这个bug。</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="/tags/golang">#golang</a>
+      </div>
+    
+  
+</div>
+
+    <div class="date"> 2018-12-24 </div>
+    
+  </div>
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:winglq@gmail.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/winglq" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2020, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

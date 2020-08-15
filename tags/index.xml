@@ -7,9 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MemDB</title>
+      <link>/tags/memdb/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/memdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MVCC</title>
+      <link>/tags/mvcc/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mvcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raft</title>
+      <link>/tags/raft/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/raft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oauth2</title>
+      <link>/tags/oauth2/</link>
+      <pubDate>Fri, 28 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/oauth2/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

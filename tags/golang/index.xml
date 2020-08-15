@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>划水</title>
-    <link>/</link>
-    <description>Recent content on 划水</description>
+    <title>golang on 划水</title>
+    <link>/tags/golang/</link>
+    <description>Recent content in golang on 划水</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
     <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -64,15 +64,6 @@
       
       <guid>/posts/gofor/</guid>
       <description>无意中搜到Handling 1 Million Requests per Minute with Go这篇博客，在评论区里有人发现文章中的代码有一个隐蔽的bug。在平时coding中这个问题比较容易被</description>
-    </item>
-    
-    <item>
-      <title>CentOS 7下安装Tensorflow</title>
-      <link>/posts/tfinstall/</link>
-      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/tfinstall/</guid>
-      <description>安装和配置 安装virtualenv，用于创建virtual的python运行时。 pip install virtualenv 创建virtual环境，下面的命令会创建一个新的目录t</description>
     </item>
     
   </channel>

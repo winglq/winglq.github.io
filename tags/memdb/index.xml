@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MemDB on 划水</title>
+    <link>/tags/memdb/</link>
+    <description>Recent content in MemDB on 划水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/memdb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hashicorp MemDB 代码分析</title>
+      <link>/posts/memdb/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/memdb/</guid>
+      <description>MemDB介绍 MemDB是一个纯内存数据库。Consul使用MemDB存储元数据，因为Raft的数据可以通过Log和Snapshot恢复，所</description>
+    </item>
+    
+  </channel>
+</rss>

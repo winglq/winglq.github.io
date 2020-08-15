@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raft on 划水</title>
+    <link>/tags/raft/</link>
+    <description>Recent content in raft on 划水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hashicorp raft 代码分析3 - Snapshot</title>
+      <link>/posts/raft3/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/raft3/</guid>
+      <description>简介 上一篇文章介绍了Raft的主要工作流程。 这篇文章主要介绍raft的snapshot机制。Raft中引入Snapshot的目的是为了避免存</description>
+    </item>
+    
+    <item>
+      <title>hashicorp raft 代码分析2 - Workflow</title>
+      <link>/posts/raft2/</link>
+      <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/raft2/</guid>
+      <description>简介 上一篇文章介绍了Raft的基本概念以及选主过程，这篇文章分析raft的主要工作流程。 Raft工作流程 首先定义下客户端（Client)，客</description>
+    </item>
+    
+    <item>
+      <title>hashicorp raft 代码分析1 - 选举leader</title>
+      <link>/posts/raft1/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/raft1/</guid>
+      <description>Raft介绍 Raft是一种一致性算法，一致性算法的作用是将几个机器看成一个整体，即使其中的某台或者某几台机器发生故障，整个系统仍能正常工作。</description>
+    </item>
+    
+  </channel>
+</rss>
