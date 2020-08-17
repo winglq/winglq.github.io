@@ -32,6 +32,8 @@
 
 <meta itemprop="keywords" content="golang,raft," />
 
+<script data-ad-client="ca-pub-7081506477431267" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
 <link rel="stylesheet" href="https://winglq.github.io/css/layout.css" />
 
@@ -111,7 +113,7 @@ if (!doNotTrack) {
 <article class="post">
     <h1 class="title"> hashicorp raft 代码分析2 - Workflow </h1>
     <div class="content"> <h2 id="简介">简介</h2>
-<p><a href="https://qingsblog.com/post/raft1/">上一篇文章</a>介绍了Raft的基本概念以及选主过程，这篇文章分析raft的主要工作流程。</p>
+<p><a href="https://winglq.github.io/posts/raft1/">上一篇文章</a>介绍了Raft的基本概念以及选主过程，这篇文章分析raft的主要工作流程。</p>
 <h2 id="raft工作流程">Raft工作流程</h2>
 <p>首先定义下客户端（Client)，客户端指使用raft库的程序。下图为Raft Apply一个命令时的主要流程，图中省略了大部分的Response示意，比如像步骤B中Log存储到LogStore后的返回就没有画出。错误处理也不在这个部分做分析，因为可能出现的错误情况太多，后面会单独整理。</p>
 <pre><code>+----------------Host A----------------------------------------+             +--Host B---+
