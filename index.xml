@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Tue, 30 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://winglq.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何用gdb调试python程序</title>
+      <link>https://winglq.github.io/posts/pythongdb/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/posts/pythongdb/</guid>
+      <description>之前写的一个python服务突然挂住了，于是想看下挂住线程的堆栈，用pstack只能看到python的栈，不能看到python code的栈，</description>
+    </item>
     
     <item>
       <title>hashicorp MemDB 代码分析</title>

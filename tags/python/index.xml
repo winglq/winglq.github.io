@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 划水</title>
+    <link>https://winglq.github.io/tags/python/</link>
+    <description>Recent content in python on 划水</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://winglq.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何用gdb调试python程序</title>
+      <link>https://winglq.github.io/posts/pythongdb/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/posts/pythongdb/</guid>
+      <description>之前写的一个python服务突然挂住了，于是想看下挂住线程的堆栈，用pstack只能看到python的栈，不能看到python code的栈，</description>
+    </item>
+    
+  </channel>
+</rss>
