@@ -7,10 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://winglq.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>日式照烧虾仁饭</title>
+      <link>https://winglq.github.io/recipes/%E6%97%A5%E5%BC%8F%E7%85%A7%E7%83%A7%E8%99%BE%E4%BB%81%E9%A5%AD/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/recipes/%E6%97%A5%E5%BC%8F%E7%85%A7%E7%83%A7%E8%99%BE%E4%BB%81%E9%A5%AD/</guid>
+      <description>用料 虾仁: 12片，面粉: 2大匙，美乃滋: 1大匙，清酒: 1大匙，味淋: 1大匙，醬油: 1大匙，太白粉: 1小匙，葱花: 1小匙，白芝麻: 少许，白饭:</description>
+    </item>
+    
+    <item>
+      <title>欧包</title>
+      <link>https://winglq.github.io/recipes/%E6%AC%A7%E5%8C%85/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/recipes/%E6%AC%A7%E5%8C%85/</guid>
+      <description>用料 中筋面粉: 500g，干酵母: 5g，盐: 10g，水: 320g，橄榄油腻: 30g，白糖: 20g，种子坚果等: 80-100g 做法 把所有食材混在一起用机器或</description>
+    </item>
+    
+    <item>
+      <title>水炖蛋</title>
+      <link>https://winglq.github.io/recipes/%E6%B0%B4%E7%82%96%E8%9B%8B/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/recipes/%E6%B0%B4%E7%82%96%E8%9B%8B/</guid>
+      <description>用料 鸡蛋: 2个，盐，酱油，醋，葱花 做法 将鸡蛋打入碗内，加盐和醋，从一个方向搅拌鸡蛋，直至蛋白和蛋黄充分混合。 再取一个碗，将刚搅匀的鸡蛋用面粉</description>
+    </item>
+    
+    <item>
+      <title>糖醋排骨</title>
+      <link>https://winglq.github.io/recipes/%E7%B3%96%E9%86%8B%E6%8E%92%E9%AA%A8/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/recipes/%E7%B3%96%E9%86%8B%E6%8E%92%E9%AA%A8/</guid>
+      <description>用料 排骨: 400g，冰糖，白砂糖，米醋，老抽，生抽，料酒，淀粉，食盐 做法 排骨剁成小段，清洗干净备用。 放进大碗里，加入食盐，料酒，淀粉用手抓匀</description>
+    </item>
+    
+    <item>
+      <title>红烧鸡爪</title>
+      <link>https://winglq.github.io/recipes/%E7%BA%A2%E7%83%A7%E9%B8%A1%E7%88%AA/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/recipes/%E7%BA%A2%E7%83%A7%E9%B8%A1%E7%88%AA/</guid>
+      <description>用料 鸡爪: 500g，生姜，小米椒，白芝麻，料酒，老抽，盐 做法 鸡爪清理干净，减去指甲。 锅里下冷水，鸡爪冷水下锅，加生姜和料酒，八角焖煮（有高压</description>
+    </item>
+    
+    <item>
+      <title>西红柿炒鸡蛋</title>
+      <link>https://winglq.github.io/recipes/%E8%A5%BF%E7%BA%A2%E6%9F%BF%E7%82%92%E8%9B%8B/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://winglq.github.io/recipes/%E8%A5%BF%E7%BA%A2%E6%9F%BF%E7%82%92%E8%9B%8B/</guid>
+      <description>用料 西红柿: 2个，鸡蛋: 3个，食用盐: 1g，白醋: 1g，番茄酱5g，白糖: 1g，水淀粉 做法 切掉蒂后再切成大小均匀的滚到块备用，可以切大一些这</description>
+    </item>
     
     <item>
       <title>如何用gdb调试python程序</title>
