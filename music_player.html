@@ -1,0 +1,21 @@
+<html>
+	<head>
+	<title> Player </title>
+	<script>
+		fetch(
+			'https://wm6rswkmm4.execute-api.us-east-1.amazonaws.com/default/myip-svr',
+			{
+				method: 'GET',
+			})
+	  .then(resp => resp.json())
+	  .then(resp => {
+			let iframe = document.createElement('iframe');
+      iframe.src = "http://" + resp.ip + ":3001"
+      iframe.style = "border-style: none; border-color: inherit; border-width: 0px; height:100%; width:100%;";
+      document.body.appendChild(iframe);
+	  })
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

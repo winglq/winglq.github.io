@@ -1,0 +1,22 @@
+<html>
+	<head>
+	<title> Tools </title>
+	<script>
+		fetch(
+			'https://wm6rswkmm4.execute-api.us-east-1.amazonaws.com/default/myip-svr',
+			{
+				method: 'GET',
+			})
+	  .then(resp => resp.json())
+	  .then(resp => {
+			let mplayerLink = document.createElement('a');
+      mplayerLink.href = "http://" + resp.ip + ":3001";
+			mplayerLink.text = "音乐播放器";
+      document.body.appendChild(mplayerLink);
+	  })
+	</script>
+	</head>
+	<body>
+		<h1> 工具索引 </h1>
+	</body>
+</html>
