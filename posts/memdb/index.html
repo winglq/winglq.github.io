@@ -7,15 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech, foods" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.84.0-DEV" />
 
 <link rel="canonical" href="https://winglq.github.io/posts/memdb/">
 <meta property="og:title" content="hashicorp MemDB 代码分析" />
 <meta property="og:description" content="MemDB介绍 MemDB是一个纯内存数据库。Consul使用MemDB存储元数据，因为Raft的数据可以通过Log和Snapshot恢复，所" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://winglq.github.io/posts/memdb/" />
-<meta property="article:published_time" content="2019-07-30T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-07-30T00:00:00+00:00" />
+<meta property="og:url" content="https://winglq.github.io/posts/memdb/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-07-30T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-07-30T00:00:00&#43;00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hashicorp MemDB 代码分析"/>
@@ -23,15 +24,10 @@
 
 
 <meta itemprop="name" content="hashicorp MemDB 代码分析">
-<meta itemprop="description" content="MemDB介绍 MemDB是一个纯内存数据库。Consul使用MemDB存储元数据，因为Raft的数据可以通过Log和Snapshot恢复，所">
-<meta itemprop="datePublished" content="2019-07-30T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-07-30T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2270">
-
-
-
+<meta itemprop="description" content="MemDB介绍 MemDB是一个纯内存数据库。Consul使用MemDB存储元数据，因为Raft的数据可以通过Log和Snapshot恢复，所"><meta itemprop="datePublished" content="2019-07-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2271">
 <meta itemprop="keywords" content="golang,MVCC,MemDB," />
-
 <script data-ad-client="ca-pub-7081506477431267" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
@@ -140,7 +136,7 @@ MVCC(Multi-Version Concurrency Control)可以使数据库在进行写操作的�
      +--+                           +--+
      |3 |                           |5 |
      +--+                           +--+
-</code></pre><p>radix tree已KV的形式读取和存入数据，使用Key路由到某个具体的节点。比如上例中要读到内容5，可以使用key=&quot;bax&rdquo;。</p>
+</code></pre><p>radix tree已KV的形式读取和存入数据，使用Key路由到某个具体的节点。比如上例中要读到内容5，可以使用key=&ldquo;bax&rdquo;。</p>
 <h2 id="memdb结构">MemDB结构</h2>
 <p>从immutable radix tree的特性可以看到，他是实现MVCC的基础。那么MemDB的表到底是怎么映射到immutable radix tree的呢？
 MemDB由TableSchema组成，TableSchema定义了Table的名称和这个table所有的IndexSchema。IndexSchema定义了Index的名称和Indexer接口。我们知道Index的作用是加快查询速度。如果没有Index，那么要找出含有表中含有某个条件的对象就只能遍历所有对象。这里的条件一般指对象的一个或者多个属性符合某个条件。那么查找一个对象的操作就可以分解为先确定哪些属性是查询需要的，然后再通过对应属性的Index查找对象，因为Index一般以一些能够加速查找的数据结构存储（比如基数树），所以无须遍历所有对象。Indexer接口就定义了FromArgs方法，该方法的作用是获得Index的key。Indexer对象还要实现FromObject方法，该方法的作用是根据对象获得其Index属性值。比如StringFieldIndex就是Indexer的一个实现。一个StringFieldIndex中包含Field的属性。Field指被存储对象的属性名称，通过golang的reflection可以得到对应的值。

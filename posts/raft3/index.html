@@ -7,15 +7,16 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech, foods" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.84.0-DEV" />
 
 <link rel="canonical" href="https://winglq.github.io/posts/raft3/">
 <meta property="og:title" content="hashicorp raft 代码分析3 - Snapshot" />
 <meta property="og:description" content="简介 上一篇文章介绍了Raft的主要工作流程。 这篇文章主要介绍raft的snapshot机制。Raft中引入Snapshot的目的是为了避免存" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://winglq.github.io/posts/raft3/" />
-<meta property="article:published_time" content="2019-03-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-03-05T00:00:00+00:00" />
+<meta property="og:url" content="https://winglq.github.io/posts/raft3/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-03-05T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-03-05T00:00:00&#43;00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hashicorp raft 代码分析3 - Snapshot"/>
@@ -23,15 +24,10 @@
 
 
 <meta itemprop="name" content="hashicorp raft 代码分析3 - Snapshot">
-<meta itemprop="description" content="简介 上一篇文章介绍了Raft的主要工作流程。 这篇文章主要介绍raft的snapshot机制。Raft中引入Snapshot的目的是为了避免存">
-<meta itemprop="datePublished" content="2019-03-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-03-05T00:00:00+00:00" />
+<meta itemprop="description" content="简介 上一篇文章介绍了Raft的主要工作流程。 这篇文章主要介绍raft的snapshot机制。Raft中引入Snapshot的目的是为了避免存"><meta itemprop="datePublished" content="2019-03-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-05T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1999">
-
-
-
 <meta itemprop="keywords" content="golang,raft," />
-
 <script data-ad-client="ca-pub-7081506477431267" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 

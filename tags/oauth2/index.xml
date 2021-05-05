@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Fri, 28 Dec 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://winglq.github.io/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 28 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://winglq.github.io/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Oauth2 Authorization Code Grant模式分析</title>
       <link>https://winglq.github.io/posts/oauth2/</link>
